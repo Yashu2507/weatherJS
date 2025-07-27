@@ -1,3 +1,4 @@
+import 'dotenv/config'
 document.addEventListener("DOMContentLoaded",()=>{
   const cityInput = document.getElementById("city-input");
   const getWeatherBtn = document.getElementById("get-weather-btn");
@@ -7,7 +8,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   const descriptionDisplay = document.getElementById("description");
   const errorMessage = document.getElementById("error-message");
 
-  const API_KEY = '3355a82252390d6eeee2f431f5c42283'; //env Variables
+  const API_KEY = process.env.API_KEY; //env Variables
 
   getWeatherBtn.addEventListener("click", async ()=>{
       const city = cityInput.value.trim();
